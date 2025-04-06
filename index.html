@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Robert A. Stan</title>
+    <!-- Favicon > -->
+    <link rel="icon" type="image/svg+xml" sizes="any" href="simple-flag.svg">
+    <!-- < Favicon -->
+    <!-- Stylesheets > -->
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="main.css" />
+    <!-- < Stylesheets -->
+</head>
+
+<body>
+    <!-- Header > -->
+    <header>
+        <!-- Logo > -->
+        <!-- Idea got from https://github.com/rexim/rexim.github.io/blob/main/index.html -->
+        <svg viewBox="0 0 16 24" version="1.1" id="flag1" class="logo" xmlns="http://www.w3.org/2000/svg"
+            xmlns:svg="http://www.w3.org/2000/svg">
+            <!-- SVG Defs > -->
+            <defs>
+                <filter id="inner-glow" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur in="SourceAlpha" stdDeviation="1" result="blur" />
+                    <feComposite operator="in" in="SourceGraphic" in2="blur" result="inner_blur_shape" />
+                    <feFlood flood-color="white" flood-opacity=".9" result="glow_color" />
+                    <feComposite operator="in" in="glow_color" in2="inner_blur_shape" result="colored_inner_glow" />
+                    <feMerge>
+                        <feMergeNode in="colored_inner_glow" />
+                    </feMerge>
+                </filter>
+            </defs>
+            <!-- < SVG Defs -->
+            <!-- SVG Paths > -->
+            <path id="rear-flag" class="rear-flag" d="M 0,0 H 16 V 24 L 8,16 0,24 Z">
+            </path>
+            <path id="front-flag-base" class="front-flag" d="M 3,0 H 13 V 20 L 8,24 3,20 Z">
+            </path>
+            <path id="front-flag-glow" class="front-flag front-flag-glow" d="M 3,0 H 13 V 20 L 8,24 3,20 Z">
+            </path>
+            <text x="8" y="12" text-anchor="middle" dominant-baseline="middle" class="logo-text">j</text>
+            <!-- < SVG Paths -->
+        </svg>
+        <!-- < Logo -->
+        <div class="divider"></div>
+        <!-- Quick About > -->
+        <section id="quick-about">
+            <h1>joe</h1>
+            <p>Hi! My name is Robert Stan. I'm also known as joe, randomjoe, anatilopan and many othher names. I do
+                (try) lots of stuff</p>
+        </section>
+        <!-- < Quick About -->
+    </header>
+    <!-- < Header -->
+
+    <!-- Hobbies > -->
+    <section id="hobbies">
+        <h2>Hobbies</h2>
+        <ul class="arrow-list">
+            <li>Thinkering
+                <ul>
+                    <li>Software
+                        <ul>
+                            <li>OPNsense - my personal firewall</li>
+                            <li>pfSense - Aphios.ro firewall</li>
+                            <li>Cisco's IOS & NX-OS - networking stuff</li>
+                            <li>Microsoft Legacy and current Servers - TODO: Make a complete list</li>
+                            <li>Drowing software</li>
+                        </ul>
+                    </li>
+                    <li>Electrics
+                        <ul>
+                            <li>Main Electric panels - home improvement when bored &mdash; do not worry, verified by
+                                profesionals :) </li>
+                            <li>Arduino projects</li>
+                        </ul>
+                    </li>
+                    <li>Hardware
+                        <ul>
+                            <li>Playing lego with computer pieces (Server and workstations)</li>
+                            <li>Plumming</li>
+                            <li>Car mechanic every some number of weeks</li>
+                            <li>Carpenter to comemorate my starting thinkering mind - and every year on a specific day
+                            </li>
+                            <li>(questionable) Clock mechanic on pocket and wrist whaches &mdash; Most of the time it
+                                works after i "fix" them :)</li>
+                        </ul>
+                    </li>
+                    <li>Music
+                        <ul>
+                            <li>Listening to old and new</li>
+                            <li>Guitar - now, from time to time</li>
+                            <li>Composing bad pieces</li>
+                            <li>Writing questionable songs</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+    <!-- < Hobbies -->
+
+    <!-- Socials > -->
+    <section id="socials">
+        <ul>
+            <li>I will revamp this;</li>
+        </ul>
+    </section>
+    <!-- < Socials -->
+
+    <div class="divider"></div>
+
+    <!-- Footer > -->
+    <footer>
+        <small>&copy 2025 Robert A. Stan</small>
+    </footer>
+    <!-- < Footer -->
+</body>
+
+</html>
