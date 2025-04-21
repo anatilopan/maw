@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test Page - Robert A. Stan</title>
+
+    <link rel="icon" type="image/svg+xml" sizes="any" href="../static/img/simple-flag.svg">
+
+    <link rel="stylesheet" href="../static/style/reset.css" />
+    <link rel="stylesheet" href="../static/style/main.css" />
+</head>
+
+<body>
+    <!-- #region Header -->
+    <header>
+        <!-- #region Logo -->
+        <!-- Idea got from https://github.com/rexim/rexim.github.io/blob/main/index.html -->
+        <svg viewBox="0 0 16 24" version="1.1" id="flag1" class="logo" xmlns="http://www.w3.org/2000/svg"
+            xmlns:svg="http://www.w3.org/2000/svg">
+            <defs>
+                <filter id="inner-glow" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur in="SourceAlpha" stdDeviation="1" result="blur" />
+                    <feComposite operator="in" in="SourceGraphic" in2="blur" result="inner_blur_shape" />
+                    <feFlood flood-color="white" flood-opacity=".9" result="glow_color" />
+                    <feComposite operator="in" in="glow_color" in2="inner_blur_shape" result="colored_inner_glow" />
+                    <feMerge>
+                        <feMergeNode in="colored_inner_glow" />
+                    </feMerge>
+                </filter>
+            </defs>
+            <!-- #region SVG Paths -->
+            <path id="rear-flag" class="rear-flag" d="M 0,0 H 16 V 24 L 8,16 0,24 Z">
+            </path>
+            <path id="front-flag-base" class="front-flag" d="M 3,0 H 13 V 20 L 8,24 3,20 Z">
+            </path>
+            <path id="front-flag-glow" class="front-flag front-flag-glow" d="M 3,0 H 13 V 20 L 8,24 3,20 Z">
+            </path>
+            <text x="8" y="12" text-anchor="middle" dominant-baseline="middle" class="logo-text">j</text>
+            <!-- #endregion -->
+        </svg>
+        <!-- #endregion -->
+        <div class="divider"></div>
+        <!-- #region Quick About -->
+        <section id="quick-about">
+            <h1 class="txt-center">Test Page</h1>
+            <p>This page includes various HTML elements for testing styles and layout.</p>
+        </section>
+        <!-- #endregion -->
+    </header>
+    <!-- #endregion -->
+
+    <!-- #region Main Content -->
+    <main>
+        <!-- #region Text Elements -->
+        <section id="text-elements">
+            <h2>Text Elements</h2>
+
+            <h1>Heading 1</h1>
+            <h2>Heading 2</h2>
+            <h3>Heading 3</h3>
+            <h4>Heading 4</h4>
+            <h5>Heading 5</h5>
+            <h6>Heading 6</h6>
+
+            <p>This is a standard paragraph.</p>
+
+            <p class="txt-center">This is a centered aligned paragraph.</p>
+            <p class="txt-end">This is a end aligned paragraph.</p>
+            <p>This is a standard paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua.</p>
+
+            <p>
+                This paragraph includes various inline text formatting elements:
+                <b>Bold text using &lt;b&gt;</b>,
+                <strong>Strong importance text using &lt;strong&gt;</strong>,
+                <i>Italic text using &lt;i&gt;</i>,
+                <em>Emphasized text using &lt;em&gt;</em>,
+                <u>Underlined text using &lt;u&gt;</u> (use with caution, often confused with links),
+                <s>Strikethrough text using &lt;s&gt;</s>,
+                <small>Small text using &lt;small&gt;</small>,
+                Text with <sub>subscript using &lt;sub&gt;</sub> and <sup>superscript using &lt;sup&gt;</sup>.
+                Inline <code>code using &lt;code&gt;</code>,
+                keyboard input like <kbd>Ctrl</kbd>+<kbd>C</kbd> using &lt;kbd&gt;,
+                sample output <samp>like this</samp> using &lt;samp&gt;,
+                and variables like <var>x</var> using &lt;var&gt;.
+            </p>
+            <p>When discussing the project, the lead developer often reminded us, <q cite="#">Premature optimization is the root of all evil</q>, urging us to focus on clarity first. This principle guided much of our initial development phase.</p>
+            <blockquote>
+                <p>This is a blockquote. It represents content quoted from another source. Often indented.</p>
+                <cite>Source Name</cite>
+            </blockquote>
+
+            <pre>This is preformatted text using &lt;pre&gt;.
+It preserves whitespace and line breaks.
+  Indentation is also preserved.
+            </pre>
+
+            <p>Code block example:</p>
+            <pre><code class="language-python"># Example Python code
+def greet(name):
+    """This function greets the person passed in as a parameter"""
+    print(f"Hello, {name}!")
+
+greet("Tester")
+</code></pre>
+            <hr> <!-- Horizontal Rule -->
+
+        </section>
+        <!-- #endregion -->
+
+        <!-- #region List Elements -->
+        <section id="list-elements">
+            <h2>List Elements</h2>
+
+            <h3>Ordered List</h3>
+            <ol>
+                <li>First item</li>
+                <li>Second item
+                    <ol type="a">
+                        <li>Nested item A</li>
+                        <li>Nested item B</li>
+                    </ol>
+                </li>
+                <li>Third item</li>
+            </ol>
+
+            <h3>Unordered List (using default class from index.html)</h3>
+            <ul>
+                <li>Bullet point 1</li>
+                <li>Bullet point 2
+                    <ul>
+                        <li>Nested bullet 1
+
+                            <ul>
+                                <li>Nested bullet 1</li>
+                                <li>Nested bullet 2</li>
+                            </ul>
+                        </li>
+                        <li>Nested bullet 2</li>
+                    </ul>
+                </li>
+                <li>Bullet point 3</li>
+            </ul>
+
+            <h3>Definition List</h3>
+            <dl>
+                <dt>Term 1</dt>
+                <dd>Definition for Term 1. Explains the term above.</dd>
+                <dt>Term 2</dt>
+                <dd>Definition for Term 2. Can have multiple definitions.</dd>
+                <dd>Another definition for Term 2.</dd>
+            </dl>
+        </section>
+        <!-- #endregion -->
+
+        <!-- #region Link Elements -->
+        <section id="link-elements">
+            <h2>Link Elements</h2>
+            <ul>
+                <li><a href="#">Internal Link (Placeholder)</a></li>
+                <li><a href="index.html">Link to index.html</a></li>
+                <li><a href="https://example.com" target="_blank" rel="noopener noreferrer">External Link (Opens in new
+                        tab)</a></li>
+                <li><a href="mailto:test@example.com">Mailto Link</a></li>
+                <li><a href="tel:+1234567890">Telephone Link</a></li>
+                <li><a href="nonexistent_page.html">Broken Link Example</a></li>
+            </ul>
+        </section>
+        <!-- #endregion -->
+
+        <!-- #region Media Elements -->
+        <section id="media-elements">
+            <h2>Media Elements</h2>
+            <p>Attempting to load the favicon as a test image:</p>
+            <!-- Note: Changed src to the SVG favicon -->
+            <img src="simple-flag.svg" alt="Favicon Test Image" width="32" height="32">
+            <p>(If you have other images, add them here with appropriate `src` and `alt` attributes)</p>
+            <!-- Example of a figure with caption -->
+            <figure>
+                <!-- Note: Changed src to the SVG favicon -->
+                <img src="simple-flag.svg" alt="Favicon again" width="64" height="64">
+                <figcaption>Fig.1 - Favicon displayed using figure and figcaption.</figcaption>
+            </figure>
+        </section>
+        <!-- #endregion -->
+
+        <!-- #region Table Elements -->
+        <section id="table-elements">
+            <h2>Table Elements</h2>
+            <table>
+                <caption>Example Table Caption</caption>
+                <thead>
+                    <tr>
+                        <th>Header 1</th>
+                        <th>Header 2</th>
+                        <th>Header 3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Data Cell 1.1</td>
+                        <td>Data Cell 1.2</td>
+                        <td>Data Cell 1.3</td>
+                    </tr>
+                    <tr>
+                        <td>Data Cell 2.1</td>
+                        <td>Data Cell 2.2</td>
+                        <td>Data Cell 2.3 has longer content to test wrapping or overflow.</td>
+                    </tr>
+                    <tr>
+                        <td>Data Cell 3.1</td>
+                        <td>Data Cell 3.2</td>
+                        <td>Data Cell 3.3</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>Footer 1</td>
+                        <td>Footer 2</td>
+                        <td>Footer 3</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+        <!-- #endregion -->
+
+        <!-- #region Form Elements -->
+        <section id="form-elements">
+            <h2>Form Elements</h2>
+            <form action="#" method="post">
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="user_name" placeholder="Enter your full name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="user_email" placeholder="you@example.com" required>
+
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="user_password" required>
+
+                    <label for="birthdate">Birth Date:</label>
+                    <input type="date" id="birthdate" name="user_birthdate">
+
+                    <label for="quantity">Quantity (1-5):</label>
+                    <input type="number" id="quantity" name="quantity" min="1" max="5">
+
+                    <label for="bio">Bio:</label>
+                    <textarea id="bio" name="user_bio" rows="4" placeholder="Tell us about yourself..."></textarea>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Preferences</legend>
+                    <p>Choose your favorite option:</p>
+                    <input type="radio" id="option1" name="fav_option" value="option1" checked>
+                    <label for="option1" class="inline-label">Option 1</label><br>
+                    <input type="radio" id="option2" name="fav_option" value="option2">
+                    <label for="option2" class="inline-label">Option 2</label><br>
+                    <input type="radio" id="option3" name="fav_option" value="option3">
+                    <label for="option3" class="inline-label">Option 3</label>
+
+                    <p>Select applicable choices:</p>
+                    <input type="checkbox" id="choice1" name="choices" value="choice1">
+                    <label for="choice1" class="inline-label">Choice A</label><br>
+                    <input type="checkbox" id="choice2" name="choices" value="choice2" checked>
+                    <label for="choice2" class="inline-label">Choice B (pre-checked)</label><br>
+                    <input type="checkbox" id="choice3" name="choices" value="choice3">
+                    <label for="choice3" class="inline-label">Choice C</label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Dropdown and Buttons</legend>
+                    <label for="category">Select a Category:</label>
+                    <select id="category" name="category">
+                        <option value="">--Please choose an option--</option>
+                        <option value="cat1">Category 1</option>
+                        <option value="cat2">Category 2</option>
+                        <option value="cat3">Category 3</option>
+                        <optgroup label="Group A">
+                            <option value="catA1">Category A.1</option>
+                            <option value="catA2">Category A.2</option>
+                        </optgroup>
+                    </select>
+
+                    <button type="submit">Submit Button</button>
+                    <button type="reset">Reset Button</button>
+                    <button type="button" onclick="alert('Button clicked!')">Clickable Button (JS)</button>
+                    <input type="submit" value="Input type=submit">
+                </fieldset>
+            </form>
+        </section>
+        <!-- #endregion -->
+
+        <!-- #region Interactive Elements -->
+        <section id="interactive-elements">
+            <h2>Interactive Elements</h2>
+            <details>
+                <summary>Click to Expand/Collapse</summary>
+                <p>This content is hidden by default and revealed when the summary is clicked. Useful for FAQs or
+                    collapsible sections.</p>
+            </details>
+
+            <details open>
+                <summary>Initially Open Section</summary>
+                <p>This content is visible by default because the `open` attribute is present.</p>
+            </details>
+        </section>
+        <!-- #endregion -->
+    </main>
+    <!-- #endregion -->
+
+    <div class="divider"></div>
+
+    <!-- #region Footer -->
+    <footer>
+        <small>&copy 2025 Robert A. Stan</small>
+    </footer>
+    <!-- #endregion -->
+</body>
+
+</html>

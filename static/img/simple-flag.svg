@@ -1,0 +1,123 @@
+<svg viewBox="0 0 16 24" version="1.1" id="flag1" class="logo" xmlns="http://www.w3.org/2000/svg"
+    xmlns:svg="http://www.w3.org/2000/svg">
+    <defs>
+        <!-- START: Filter Definition -->
+        <filter id="inner-glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="1" result="blur" />
+            <feComposite operator="in" in="SourceGraphic" in2="blur" result="inner_blur_shape" />
+            <feFlood flood-color="white" flood-opacity=".9" result="glow_color" />
+            <feComposite operator="in" in="glow_color" in2="inner_blur_shape" result="colored_inner_glow" />
+            <feMerge>
+                <feMergeNode in="colored_inner_glow" />
+            </feMerge>
+        </filter>
+        <!-- END: Filter Definition -->
+    </defs>
+
+    <!-- START: Embedded Styles -->
+    <style type="text/css">
+        /* Define CSS Variables directly inside the SVG */
+        :root {
+            --bg-color: #f8fafc;
+            /* Light Background */
+            --surface-color: #e2e8f0;
+            /* White Surface/Card */
+            --text-primary: #1e293b;
+            /* Dark Primary Text */
+            --text-secondary: #64748b;
+            --text-secondary-alternative: #3b1e1e;
+            /* Medium Grey Secondary Text */
+            --accent-color: #c92222;
+            /* Vibrant Blue Accent */
+        }
+
+        @media (prefers-color-scheme: light) {
+            :root {
+                --bg-color: #12181f;
+                /* Dark Background */
+                --surface-color: #1e293b;
+                /* Dark Surface/Card */
+                --text-primary: #e2e8f0;
+                /* Light Primary Text */
+                --text-secondary: #94a3b8;
+                /* Muted Grey Secondary Text */
+                --text-secondary-alternative: #b89494;
+                --accent-color: #f63b3b;
+                /* Vibrant Blue Accent */
+                /* Adjusted transition slightly for opacity */
+                --color-transition: fill 0.2s ease-in-out, opacity 0.2s ease-in-out;
+            }
+        }
+
+        /* Apply styles to SVG elements using the variables */
+        .logo-text {
+            fill: var(--text-secondary);
+            font-size: 12px;
+            font-weight: bold;
+            stroke: none;
+            transition: var(--color-transition);
+            /* Use variable */
+        }
+
+        .rear-flag {
+            fill: var(--text-secondary);
+            fill-opacity: 1;
+            stroke-linejoin: round;
+            stroke-width: .2;
+            stroke: black;
+            /* Consider var(--text-primary) or similar for stroke? */
+            vector-effect: non-scaling-stroke;
+            transition: var(--color-transition);
+            /* Use variable */
+        }
+
+        .front-flag {
+            fill: var(--text-primary);
+            stroke-linejoin: round;
+            stroke-width: .2;
+            stroke: black;
+            /* Consider var(--text-secondary) or similar for stroke? */
+            vector-effect: non-scaling-stroke;
+            transition: var(--color-transition);
+            /* Use variable */
+        }
+
+        .front-flag-glow {
+            /* Inherit base styles from .front-flag implicitly */
+            /* Or explicitly copy them if needed */
+            fill: var(--text-primary);
+            /* Ensure it has the base fill */
+            stroke-linejoin: round;
+            stroke-width: .2;
+            stroke: black;
+            vector-effect: non-scaling-stroke;
+            filter: url(#inner-glow);
+            opacity: 0;
+            transition: var(--color-transition);
+            /* Use variable */
+            pointer-events: none;
+        }
+
+        /* Hover effects targeting the SVG root element */
+        svg:hover .rear-flag,
+        svg:hover .logo-text {
+            fill: var(--accent-color);
+        }
+
+        svg:hover .front-flag-glow {
+            opacity: 1;
+        }
+    </style>
+    <!-- END: Embedded Styles -->
+
+    <!-- START: SVG Paths and Text -->
+    <path id="rear-flag" class="rear-flag" d="M 0,0 H 16 V 24 L 8,16 0,24 Z">
+    </path>
+    <path id="front-flag-base" class="front-flag" d="M 3,0 H 13 V 20 L 8,24 3,20 Z">
+    </path>
+    <!-- Make sure the glow path also has the correct classes -->
+    <path id="front-flag-glow" class="front-flag front-flag-glow" d="M 3,0 H 13 V 20 L 8,24 3,20 Z">
+    </path>
+    <text x="8" y="12" text-anchor="middle" dominant-baseline="middle" class="logo-text">j</text>
+    <!-- END: SVG Paths and Text -->
+</svg>
